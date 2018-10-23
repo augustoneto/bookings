@@ -46,7 +46,7 @@ public class ReservationService {
             reservations.forEach(reservation -> {
                 Optional<Guest> guestResponse = this.guestRepository.findById(reservation.getGuestId());
                 if(guestResponse.isPresent()){
-                    Guest guest = guestResponse.get()
+                    Guest guest = guestResponse.get();
                     RoomReservation roomReservation = roomReservationMap.get(reservation.getId());
                     roomReservation.setDate(date);
                     roomReservation.setFirstName(guest.getFirstName());
